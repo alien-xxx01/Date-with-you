@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Lady ❤️</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(#ffd6e8,#fff);
+}
+
+
+.card{
+
+background:white;
+padding:40px;
+width:90%;
+max-width:450px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 10px 30px pink;
+
+}
+
+
+h1{
+
+color:#ff4f9a;
+
+}
+
+
+button{
+
+padding:15px 30px;
+border:none;
+border-radius:30px;
+font-size:18px;
+margin:10px;
+cursor:pointer;
+
+}
+
+
+.yes{
+
+background:#ff69b4;
+color:white;
+
+}
+
+
+.no{
+
+background:#ddd;
+
+}
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+input,select{
+
+padding:12px;
+border-radius:20px;
+border:2px solid pink;
+width:90%;
+margin:10px;
+
+}
+
+
+.food{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+
+.food div{
+
+background:#ffe5f1;
+padding:20px;
+border-radius:20px;
+font-size:20px;
+cursor:pointer;
+
+}
+
+
+.food div:hover{
+
+background:pink;
+
+}
+
+
+.msg{
+
+color:#ff4f9a;
+font-size:22px;
+margin-top:20px;
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<div class="card" id="one">
+
+<h1>
+Do you wanna go out with me Lady ❤️
+</h1>
+
+
+<button class="yes" onclick="yes()">
+Yes Ofc 💗
+</button>
+
+
+<button class="no" onclick="no()">
+No ❌
+</button>
+
+
+<div class="msg" id="noMsg"></div>
+
+
+</div>
+
+
+
+
+
+<!-- PAGE 2 RENDEZ VOUS -->
+
+
+<div class="card hidden" id="two">
+
+
+<h1>
+Choose our rendez vous ❤️
+</h1>
+
+
+<select id="day">
+
+<option>Select a day 🌸</option>
+
+<option>Monday</option>
+<option>Tuesday</option>
+<option>Wednesday</option>
+<option>Thursday</option>
+<option>Friday</option>
+<option>Saturday</option>
+<option>Sunday</option>
+
+</select>
+
+
+
+<input 
+type="time"
+id="time"
+>
+
+
+
+<button class="yes" onclick="confirmDate()">
+
+Confirm ❤️
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<!-- PAGE 3 FOOD -->
+
+
+<div class="card hidden" id="three">
+
+
+<h1>
+What do you want to eat? 😋
+</h1>
+
+
+<div class="food">
+
+
+<div onclick="finish()">
+🥞 Crepês
+</div>
+
+
+<div onclick="finish()">
+🫓 Msemen
+</div>
+
+
+<div onclick="finish()">
+❤️ You
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- LAST PAGE -->
+
+
+<div class="card hidden" id="four">
+
+
+<h1>
+
+Good alghzala dyali ❤️✨
+
+</h1>
+
+
+<div class="msg">
+
+You are being such a lovely girl for me 🥰💗
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+let count=0;
+
+
+function yes(){
+
+document.getElementById("one").classList.add("hidden");
+
+document.getElementById("two").classList.remove("hidden");
+
+}
+
+
+
+function no(){
+
+count++;
+
+let m=document.getElementById("noMsg");
+
+
+if(count==1){
+
+m.innerHTML="Really ? 🥺💔";
+
+}
+
+
+else if(count==2){
+
+m.innerHTML="Think about it a little bit 🥹💕";
+
+}
+
+
+else{
+
+m.innerHTML="Safe siri gha tqawdi 😤😂💔";
+
+
+setTimeout(()=>{
+
+m.innerHTML="I'm just kidding alghzala dyali ❤️✨";
+
+},2000);
+
+
+
+setTimeout(()=>{
+
+yes();
+
+},4500);
+
+
+}
+
+
+}
+
+
+
+
+
+function confirmDate(){
+
+
+document.getElementById("two").classList.add("hidden");
+
+
+document.getElementById("three").classList.remove("hidden");
+
+
+}
+
+
+
+
+function finish(){
+
+
+document.getElementById("three").classList.add("hidden");
+
+
+document.getElementById("four").classList.remove("hidden");
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
